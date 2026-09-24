@@ -13,17 +13,20 @@ Una landing page moderna y responsiva para Casa El Encuentro, una residencia bou
 ## 🛠️ Stack Tecnológico
 
 ### Framework & Core
+
 - **Next.js 16.3.6** - React framework con App Router
 - **React 19.2.8** - UI component library
 - **TypeScript 5** - Type safety
 
 ### Styling & Design
+
 - **Tailwind CSS 4** - Utility-first CSS con `@theme` directive
 - **PostCSS 4** - CSS processing
 - **Material Symbols Outlined** - Iconografía
 - **Plus Jakarta Sans** - Tipografía (Google Fonts)
 
 ### Development
+
 - **ESLint 9** - Linting
 - **Turbopack** - Fast bundler (integrado en Next.js 16)
 
@@ -65,15 +68,18 @@ elencuentro_lp/
 ## 🎨 Decisiones de Diseño
 
 ### 1. Diseño System Token-Based
+
 **Decisión**: Implementar todos los colores, tipografía y espacios como tokens Tailwind CSS.
 
 **Justificación**:
+
 - Mantener fidelidad 100% con DESIGN.md de Stitch
 - Facilitar cambios globales de marca (color, fuente) en un solo lugar
 - Evitar hard-coded values y magic numbers
 - Escalabilidad para futuros componentes
 
 **Implementación**:
+
 ```css
 @theme {
   --color-primary: #5f0219;
@@ -83,36 +89,44 @@ elencuentro_lp/
 ```
 
 ### 2. Componentización Granular
+
 **Decisión**: Separar cada sección en su propio componente.
 
 **Justificación**:
+
 - Reutilización fácil de componentes
 - Fácil mantenimiento y testing
 - Código legible y escalable
 - Lazy loading automático en producción
 
 ### 3. Glassmorphism & Ambient Light
+
 **Decisión**: Usar backdrop blur, sombras ambiental y glows decorativas.
 
 **Justificación**:
+
 - Reflejar diseño original de Stitch (elegante, moderno)
 - Crear sensación de profundidad sin borders duros
 - Mejorar jerarquía visual
 - Mantener consistencia con brand identity
 
 ### 4. Mobile-First Responsive
+
 **Decisión**: Diseñar primero para mobile, luego escalar a desktop.
 
 **Justificación**:
+
 - 70%+ del tráfico es mobile
 - Mejor UX en pantallas pequeñas
 - Usar Tailwind responsive prefixes (sm:, md:, lg:)
 - Optimizar performance en dispositivos constrained
 
 ### 5. Interactive State Management
+
 **Decisión**: Usar React hooks para FAQ accordion, mobile menu drawer.
 
 **Justificación**:
+
 - UX fluid sin page reloads
 - Chevron rotation + smooth expand/collapse
 - Keyboard accessibility (Enter/Space)
@@ -121,45 +135,55 @@ elencuentro_lp/
 ## 🤖 Uso de IA
 
 ### Metodología: Organic Driven Development (ODD)
-Este proyecto fue construido usando **ODD**, un workflow que integra IA como herramienta coordinadora:
+
+Este proyecto fue construido usando el framework agentico de gentle-ai con su metodología **ODD**, un workflow que integra IA como herramienta coordinadora:
+
+### Diseño: Google Stitch
+
+Este proyecto fue diseñado con la ayuda de la herramienta de diseño de IA de Google Stitch
 
 #### Fases de ODD aplicadas:
 
 **1. Autorización (Go/No-Go)**
+
 - ✅ Evaluar scope, constraints, acceptance criteria
 - ✅ Decidir si es trabajo substancial (14 tareas)
 - ✅ Crear documentación ODD antes del código
 
 **2. Exploración**
+
 - ✅ Analizar DESIGN.md (colores, tipografía, espacios)
 - ✅ Parsear index.html (estructura, componentes)
 - ✅ Entender project setup (Next.js 16, Tailwind v4)
 
 **3. Resolución de Incertidumbre**
+
 - ✅ Tailwind v3 vs v4 - elegir @theme directive
 - ✅ Número de componentes - granularidad balanceada
 - ✅ Accesibilidad - implementar ARIA, keyboard nav
 
 **4. Clasificación**
+
 - ✅ Trabajo substancial = 14 tareas + 3 commits
 - ✅ Requiere documentación + tracking
 - ✅ Crear odd/tasks/landing-page.md antes de escribir
 
 **5. Tracking & Commits**
+
 - ✅ Work-unit commits: cada tarea = 1 commit
 - ✅ Conventional Commits: feat, fix, chore
 - ✅ Documentación viaja con código
 
 ### Contribuciones de IA:
 
-| Fase | Rol IA | Output |
-|------|--------|--------|
-| **Exploración** | Análisis de archivos origen | Mapping de 40+ colores, 13 tipografías |
-| **Arquitectura** | Diseño de componentes | 11 componentes React + estructura |
-| **Configuración** | Setup Tailwind v4 | @theme directive + CSS variables |
-| **Codificación** | Generación de componentes | Todos los .tsx con UX polish |
-| **QA** | Debugging | Fix Tailwind v4 color config |
-| **Documentación** | Síntesis | README + ODD tasks document |
+| Fase              | Rol IA                      | Output                                 |
+| ----------------- | --------------------------- | -------------------------------------- |
+| **Exploración**   | Análisis de archivos origen | Mapping de 40+ colores, 13 tipografías |
+| **Arquitectura**  | Diseño de componentes       | 11 componentes React + estructura      |
+| **Configuración** | Setup Tailwind v4           | @theme directive + CSS variables       |
+| **Codificación**  | Generación de componentes   | Todos los .tsx con UX polish           |
+| **QA**            | Debugging                   | Fix Tailwind v4 color config           |
+| **Documentación** | Síntesis                    | README + ODD tasks document            |
 
 ### Decisiones Humano-IA:
 
@@ -171,6 +195,7 @@ Este proyecto fue construido usando **ODD**, un workflow que integra IA como her
 ## 🚀 Instalación & Uso
 
 ### Requisitos
+
 - Node.js 18+
 - npm 9+
 
@@ -207,6 +232,7 @@ npm run lint
 ## 🔗 Design System
 
 ### Colores
+
 - **Primary** (Burgundy): `#5f0219` - CTAs, highlights, primary actions
 - **Secondary** (Bordo): `#aa3343` - Secondary CTAs, hover states
 - **Tertiary** (Dark Gray): `#312a2d` - Tertiary elements
@@ -214,23 +240,25 @@ npm run lint
 - **On-Surface**: `#171c23` - Text, foreground
 
 ### Tipografía
+
 - **Headline XL**: 48px, 600 weight (hero titles)
 - **Headline LG**: 36px, 600 weight (section titles)
 - **Body MD**: 14px, 400 weight (body text)
 - **Label LG**: 14px, 600 weight (buttons, tags)
 
 ### Espacios
+
 - **Gutter**: 1.5rem (horizontal padding)
 - **Margin**: 2rem (section margins)
 - **Space**: 0.25rem - 2.5rem (component spacing)
 
 ## 📱 Breakpoints
 
-| Breakpoint | Ancho | Uso |
-|-----------|-------|-----|
-| Mobile | < 640px | 1-2 columnas, full-bleed |
-| Tablet | 640px - 1024px | 2-3 columnas |
-| Desktop | > 1024px | 3-4 columnas, max-width 1280px |
+| Breakpoint | Ancho          | Uso                            |
+| ---------- | -------------- | ------------------------------ |
+| Mobile     | < 640px        | 1-2 columnas, full-bleed       |
+| Tablet     | 640px - 1024px | 2-3 columnas                   |
+| Desktop    | > 1024px       | 3-4 columnas, max-width 1280px |
 
 ## ♿ Accesibilidad
 
@@ -248,26 +276,6 @@ npm run lint
 - ✅ External links con `rel="noopener noreferrer"`
 - ✅ Email obfuscation para evitar spam
 
-## 📈 Próximos Pasos
-
-### Phase 2: Optimización
-- [ ] Implementar `next/image` para auto-optimize
-- [ ] Setup Vercel Analytics
-- [ ] Agregar Sentry para error tracking
-- [ ] PWA manifest + service worker
-
-### Phase 3: CMS Integration
-- [ ] Contenido dinámico con Sanity CMS
-- [ ] Gallería de fotos actualizable
-- [ ] Calendario de disponibilidad
-- [ ] Form de contacto con notificaciones
-
-### Phase 4: E-commerce
-- [ ] Integración Stripe para pagos
-- [ ] Checkout flow
-- [ ] Confirmaciones email
-- [ ] Dashboard para anfitriones
-
 ## 📚 Referencias
 
 - [Next.js Docs](https://nextjs.org/docs)
@@ -277,10 +285,4 @@ npm run lint
 
 ## 📄 Licencia
 
-© 2024 Casa El Encuentro. Todos los derechos reservados.
-
----
-
-**Construido con ❤️ usando Organic Driven Development (ODD) + IA**
-
-Para preguntas o contribuciones: hola@casaelencuentro.com
+© 2026 Casa El Encuentro. Todos los derechos reservados.
