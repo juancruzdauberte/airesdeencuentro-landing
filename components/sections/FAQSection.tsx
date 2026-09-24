@@ -53,23 +53,37 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-surface-container-low rounded-xl p-space-md transition-all cursor-pointer hover:bg-surface-container"
+              className="bg-surface-container-low rounded-xl p-space-md transition-all cursor-pointer hover:bg-surface-container focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2"
               onClick={() => toggleFAQ(index)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggleFAQ(index);
+                }
+              }}
+              aria-expanded={openIndex === index}
+              aria-controls={`faq-answer-${index}`}
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-title-sm text-title-sm text-on-surface font-bold">
                   {faq.question}
                 </h3>
                 <span
-                  className={`material-symbols-outlined text-primary text-[20px] transition-transform ${
+                  className={`material-symbols-outlined text-primary text-[20px] transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
+                  aria-hidden="true"
                 >
                   expand_more
                 </span>
               </div>
               {openIndex === index && (
-                <div className="pt-space-sm text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                <div
+                  id={`faq-answer-${index}`}
+                  className="pt-space-sm text-on-surface-variant font-body-md text-body-md leading-relaxed animate-fade-in-up"
+                >
                   {faq.answer}
                 </div>
               )}
