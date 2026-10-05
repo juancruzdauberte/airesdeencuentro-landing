@@ -1,109 +1,126 @@
-const spaces = [
+'use client';
+
+const galleryItems = [
   {
-    image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1X9YNTY2LswBDOkpHjp4tivtbAPmpV-imxXKRgGkOUSp_EdNlTQ8UpSqUI6lsNAJKQrKHVJticePGiGpn1zFBYKlXzmLl-8uysgfK2ATuI73sNYsOGds94u-piJTeWtps_gEgCDqT-U7uYotcNYoTf2maEXaJf4WrAG_meUID-aDsEKBTBjKTHXUrniDIfB151jUInm4SXI29rodTlc7Tx1j6D9DdVq4jzENnfk4XRgCA",
-    badge: "Luz matinal abundante",
-    title: "Living & Comedor integrado",
+    id: 1,
+    title: 'Suite Principal con Vista al Bosque',
+    subtitle: 'Espacio de descanso',
     description:
-      "Sillón de lino amplio, ventanales de piso a techo con vistas al verde y mesa de roble para 6 comensales.",
-    feature: "Orientación este / sol de mañana",
-    featureIcon: "wb_sunny",
+      'Sommier King Size, ropa de cama de lino puro, vigas de madera noble y ventanales al parque.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDSjom_MgaxGkGIKbnau4NiyC9cB9d6Da7TEJzX8IJagYh1pjKOS95SFa9uFzwX5Gudokx6kHdj379ctjxByNtXxsQrhAMXnBy_u2gLbnj_vq2NZRhHnwQqfDgFaIPR5qaELiqH5s5xP5JVgQZd0lkE1SSDM9TxXC8VVZE67l9FsEVgbm3F_9UZGEz1rwrlqUdI--ZjvW1nSRJYXDocAyu0sR0fmcrFfANDvqN7SVMaIRzPkaqa95oS',
+    colSpan: 'md:col-span-7',
+    rowHeight: 'h-[380px] sm:h-[460px]',
   },
   {
-    image:
-      "https://lh3.googleusercontent.com/aida/AEtjO1W3kr081jTGCnm4dlUEJlVTYX2-hEYFAfuxj4KoD9a-6eYR4UwN9oFPEgPExtVdQEI3gvehdWm36vwSJNyGNJ0zoD3v4G25yQH-zcDvrpAG2NjXvDdKKeV-y3K7yV-cn-vcM5mkaSaYJI6i8LgCjWFjRoXHDe6sUcnNTEGbsPh8d7U_mk--8RbvZrCxqezMs3Gecpo1QTI6FVKOiZPWYpl89MMRk30qyXWWsM7PXTID",
-    badge: "Ropa de cama de algodón egipcio",
-    title: "Dormitorio principal en suite",
+    id: 2,
+    title: 'Piscina & Terraza Panorámica',
+    subtitle: 'Atardeceres Únicos',
     description:
-      "Cama King size con colchón premium, cortinas translúcidas de gasa de lino, baño privado y placard vestidor.",
-    feature: "Aislamiento acústico testeado",
-    featureIcon: "spa",
+      'Espejo de agua con orientación oeste para disfrutar la puesta de sol en las sierras.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuC3MOj8Q720PGwgwKSOC3pLc5El0Fd0krA36qN0LSmovC-IzI1v-x39jHZ3j4hO_smo5I1_mbBaHP6sFhO_NB15YB5J7rtLr-xg3X5X6u68O9LOt3lS6ArsxrLOYH8YUGM1ipsWp8_owiLQpqu6paMHA5eOqBWU12bx_D1kQVNGSFs-BKUob2JNHI3mg1JY_uU7NM1RrFIcuWAk0QqMqt-E22BK4F-T_7OfDVvRpz3UGB2IdvKomXX7',
+    colSpan: 'md:col-span-5',
+    rowHeight: 'h-[380px] sm:h-[460px]',
   },
   {
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuD22fy540gqgQmjBbuXazcreRN8uUEuGcmDi77Vho2Abi-lhuMWMY9RNhW4aOLTUrKfHBqVR1FdcZ4vmFR8H2v0WrCUjMzpfLZ7qZ4IpaMULJOUFz18bCU-6R_Sdt-LqS84-QrrXJiHVNyBUkJYwNLVKA_cOYxMtvMoDuh_O6eaRQFKdEJU7X3QqopLmfeOERzf4wPM6fx2CmZ-uw1omznJb7vBlGFesMYvUqrCnnhx",
-    badge: "Cocina 100% equipada",
-    title: "Cocina gourmet & Isla desayunadora",
+    id: 3,
+    title: 'Living con Chimenea a Leña',
+    subtitle: 'Cálido & Acogedor',
     description:
-      "Anafe por inducción, horno eléctrico, cafetera espresso, vajilla completa de cerámica y lavavajillas.",
-    feature: "Café de cortesía de especialidad",
-    featureIcon: "coffee_maker",
+      'Sillones de lino profundo, biblioteca seleccionada y calor de hogar.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuC3MOj8Q720PGwgwKSOC3pLc5El0Fd0krA36qN0LSmovC-IzI1v-x39jHZ3j4hO_smo5I1_mbBaHP6sFhO_NB15YB5J7rtLr-xg3X5X6u68O9LOt3lS6ArsxrLOYH8YUGM1ipsWp8_owiLQpqu6paMHA5eOqBWU12bx_D1kQVNGSFs-BKUob2JNHI3mg1JY_uU7NM1RrFIcuWAk0QqMqt-E22BK4F-T_7OfDVvRpz3UGB2IdvKomXX7',
+    colSpan: 'md:col-span-6',
+    rowHeight: 'h-[300px]',
   },
   {
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAwn6lRwMq79vMUDSS652SplDcQ2QKfGTQZMqNcAzeE3A0eEOWGvZa7xXbf8o-zQkGB6POLMslifTeLukCwdJZgku1Qdc58Yehu-WaPb8QSVXb3Bupvfat_0E9NG-c5GG6q7DKC8aSJ73KarHF_L2Xd7gbc4d2h6klfaIaCl53zUk5HXl0341rBNUTEedBuWNGaPrFJ2qAgxiMmOmL2MMz2J9Sc-xAa7KA54aa6WbrI",
-    badge: "Espacio exterior privado",
-    title: "Galería, Parrilla & Jardín",
+    id: 4,
+    title: 'Galería Semicubierta & Rincón de Lectura',
+    subtitle: 'Paz Total',
     description:
-      "Parrilla tradicional argentina, fogonero, reposeras de madera y parque arbolado sin vistas cruzadas de vecinos.",
-    feature: "100% de uso exclusivo para tu grupo",
-    featureIcon: "yard",
+      'Disfruta del canto de los pájaros y la brisa serrana con total privacidad.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDSjom_MgaxGkGIKbnau4NiyC9cB9d6Da7TEJzX8IJagYh1pjKOS95SFa9uFzwX5Gudokx6kHdj379ctjxByNtXxsQrhAMXnBy_u2gLbnj_vq2NZRhHnwQqfDgFaIPR5qaELiqH5s5xP5JVgQZd0lkE1SSDM9TxXC8VVZE67l9FsEVgbm3F_9UZGEz1rwrlqUdI--ZjvW1nSRJYXDocAyu0sR0fmcrFfANDvqN7SVMaIRzPkaqa95oS',
+    colSpan: 'md:col-span-6',
+    rowHeight: 'h-[300px]',
   },
 ];
 
 export default function GallerySection() {
   return (
-    <section className="w-full py-space-xl" id="galeria">
-      <div className="max-w-[1280px] mx-auto px-margin-sm lg:px-margin-lg">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+    <section
+      className="py-20 lg:py-28 bg-brand-sand/50"
+      data-purpose="photo-gallery"
+      id="galeria"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-1">
-              ESPACIOS DE LA CASA
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-terracotta">
+              Galería visual
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
-              Cada rincón pensado para tu bienestar
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-charcoal mt-1">
+              Conoce cada rincón
             </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-1">
-              Luz natural, materiales nobles y ambientes amplios para disfrutar
-              en calma.
-            </p>
           </div>
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-space-xs font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors group"
-          >
-            <span>Consultar tarifas por temporada</span>
-            <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
-              arrow_forward
-            </span>
-          </a>
+          <p className="mt-3 md:mt-0 text-brand-muted text-sm sm:text-base max-w-md">
+            Arquitectura bioclimática, materiales nobles y grandes aberturas
+            que integran el interior con el paisaje.
+          </p>
         </div>
 
-        {/* Spaces Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-          {spaces.map((space, index) => (
-            <article
-              key={index}
-              className="group flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5" id="la-casa">
+          {galleryItems.map((item, index) => (
+            <div
+              key={item.id}
+              className={`${item.colSpan} ${item.rowHeight} group relative rounded-3xl overflow-hidden shadow-soft hover:shadow-floating transition-all duration-500 animate-fade-in-up`}
+              style={{
+                animationDelay: `${index * 0.15}s`,
+              }}
             >
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
-                <img
-                  alt={space.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  src={space.image}
-                />
-                <div className="absolute top-3 left-3 bg-secondary-fixed/90 backdrop-blur-sm text-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold shadow-sm">
-                  {space.badge}
-                </div>
-              </div>
-              <div className="p-space-md flex flex-col flex-1">
-                <h3 className="font-title-sm text-title-sm text-on-surface font-bold group-hover:text-primary transition-colors mb-1">
-                  {space.title}
+              <img
+                alt={item.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src={item.image}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+              {/* Content */}
+              <div className="absolute bottom-6 left-6 right-6 text-white opacity-100 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-xs uppercase font-semibold text-brand-sun tracking-wider">
+                  {item.subtitle}
+                </span>
+                <h3 className="text-2xl font-serif font-medium mt-1">
+                  {item.title}
                 </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-sm">
-                  {space.description}
+                <p className="text-stone-300 text-xs sm:text-sm mt-1">
+                  {item.description}
                 </p>
-                <div className="mt-auto pt-space-xs flex items-center gap-1.5 text-primary font-label-sm text-label-sm">
-                  <span className="material-symbols-outlined text-[16px]">
-                    {space.featureIcon}
-                  </span>
-                  <span>{space.feature}</span>
-                </div>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </section>
   );
 }

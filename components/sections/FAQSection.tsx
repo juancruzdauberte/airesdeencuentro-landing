@@ -1,96 +1,115 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 
-const faqs = [
+const faqItems = [
   {
-    question: "¿Cómo consulto y reservo la casa sin registrarme?",
+    question: '¿Cuál es la política de check-in y check-out?',
     answer:
-      "No necesitas crearte cuentas ni recordar contraseñas. Nos contactás de forma directa por WhatsApp o a través de nuestro formulario de contacto. Te confirmamos disponibilidad de calendario en minutos y coordinamos la reserva de forma personalizada y segura.",
+      'El horario habitual de check-in es a partir de las 15:00 hs y el check-out es hasta las 11:00 hs. Contamos con sistema de cerradura digital para un ingreso autónomo y flexible si llegas más tarde.',
   },
   {
-    question: "¿Cuáles son las comodidades incluidas para niños o bebés?",
+    question: '¿Se aceptan mascotas (pet friendly)?',
     answer:
-      "Disponemos de cuna plegable tipo practicuna con colchón firme y sábanas limpias, sillita alta para comer, vajilla infantil libre de BPA y bañera para bebés. Sólo requerimos que nos avises al momento de la consulta para tenerla lista antes de tu llegada.",
+      'Sí, aceptamos hasta dos mascotas educadas de tamaño pequeño o mediano. Solicitamos notificarnos con antelación para preparar el espacio con camitas y recipientes adecuados.',
   },
   {
-    question: "¿Cómo se realiza el pago y qué medios aceptan?",
+    question: '¿Qué incluye la estadía respecto a blancos y limpieza?',
     answer:
-      "Aceptamos transferencia bancaria en pesos argentinos (al tipo de cambio pactado) o en dólares estadounidenses, además de tarjetas de crédito mediante link de pago seguro. Para estadías mensuales ofrecemos planes de pago desdoblados.",
+      'Incluimos sábanas de percal de algodón 100%, toallas y toallones de baño, toallas para la piscina, amenidades orgánicas de cortesía y limpieza final garantizada.',
   },
   {
-    question: "¿Se permiten mascotas (pet-friendly)?",
+    question: '¿Cómo son las condiciones de reserva y cancelación?',
     answer:
-      "Sí, aceptamos perritos o gatos educados previa consulta. Contamos con un parque completamente cerrado y seguro. Solicitamos cuidar la ropa de cama y sillones, y aplicamos una tarifa mínima de sanitización final para mascotas.",
-  },
-  {
-    question: "¿Qué incluye la provisión de ropa blanca e higiene?",
-    answer:
-      "Entregamos la casa con juegos completos de sábanas de percal de algodón, toallones de cuerpo y mano por huésped, repasadores y un set inicial de amenities biodegradables (jabón vegetal, shampoo, acondicionador, papel higiénico y cápsulas de café). Para estadías mayores a 7 días, incluimos recambio semanal sin costo.",
+      'Se abona el 50% al momento de reservar para bloquear fechas y el 50% restante al ingresar. Ofrecemos cancelación gratuita con reembolso total hasta 14 días antes de tu fecha de llegada.',
   },
 ];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full pb-space-xl" id="faqs">
-      <div className="max-w-[840px] mx-auto px-margin-sm lg:px-margin-lg">
-        <div className="text-center mb-space-lg">
-          <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-1">
-            PREGUNTAS FRECUENTES
+    <section
+      className="py-20 lg:py-24 bg-brand-sand/60"
+      data-purpose="faq-section"
+      id="faq"
+    >
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-14 animate-fade-in-up">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-olive">
+            Dudas frecuentes
           </span>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface">
-            Respuestas directas para tu estadía
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-charcoal mt-1">
+            Preguntas Frecuentes
           </h2>
+          <p className="text-brand-muted text-sm sm:text-base mt-2">
+            Todo lo que necesitas saber antes de confirmar tu reserva.
+          </p>
         </div>
 
-        <div className="space-y-space-sm">
-          {faqs.map((faq, index) => (
-            <div
+        {/* FAQ Container */}
+        <div className="space-y-4">
+          {faqItems.map((item, index) => (
+            <details
               key={index}
-              className="bg-surface-container-low rounded-xl p-space-md transition-all cursor-pointer hover:bg-surface-container focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2"
-              onClick={() => toggleFAQ(index)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  toggleFAQ(index);
-                }
+              className="group bg-white rounded-2xl border border-stone-200/80 p-6 transition-all duration-300 shadow-sm hover:shadow-soft cursor-pointer overflow-hidden animate-fade-in-up"
+              style={{
+                animationDelay: `${index * 0.1}s`,
               }}
-              aria-expanded={openIndex === index}
-              aria-controls={`faq-answer-${index}`}
+              open={index === openIndex}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenIndex(openIndex === index ? -1 : index);
+              }}
             >
-              <div className="flex items-center justify-between">
-                <h3 className="font-title-sm text-title-sm text-on-surface font-bold">
-                  {faq.question}
+              <summary className="flex items-center justify-between cursor-pointer list-none">
+                <h3 className="text-base sm:text-lg font-bold text-brand-charcoal pr-4">
+                  {item.question}
                 </h3>
-                <span
-                  className={`material-symbols-outlined text-primary text-[20px] transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  aria-hidden="true"
-                >
-                  expand_more
+                <span className="p-1 rounded-full text-brand-terracotta transition-transform duration-300 group-open:rotate-180 shrink-0">
+                  <ChevronDown size={20} />
                 </span>
+              </summary>
+
+              <div className="mt-4 text-sm text-brand-muted leading-relaxed border-t border-stone-100 pt-3 animate-scale-up">
+                {item.answer}
               </div>
-              {openIndex === index && (
-                <div
-                  id={`faq-answer-${index}`}
-                  className="pt-space-sm text-on-surface-variant font-body-md text-body-md leading-relaxed animate-fade-in-up"
-                >
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+            </details>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes scaleUp {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+        .animate-scale-up {
+          animation: scaleUp 0.3s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }
