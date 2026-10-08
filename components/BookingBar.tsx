@@ -48,7 +48,10 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
                 htmlFor="check-in-date"
               >
-                <Calendar size={12} className="text-brand-terracotta flex-shrink-0" />
+                <Calendar
+                  size={12}
+                  className="text-brand-terracotta flex-shrink-0"
+                />
                 <span className="hidden sm:inline">Check-in</span>
                 <span className="sm:hidden">Llegada</span>
               </label>
@@ -68,7 +71,10 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
                 htmlFor="check-out-date"
               >
-                <Calendar size={12} className="text-brand-terracotta flex-shrink-0" />
+                <Calendar
+                  size={12}
+                  className="text-brand-terracotta flex-shrink-0"
+                />
                 <span className="hidden sm:inline">Check-out</span>
                 <span className="sm:hidden">Salida</span>
               </label>
@@ -77,6 +83,8 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
                 className="border-0 p-0 text-xs sm:text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
                 id="check-out-date"
                 type="date"
+                min={checkin}
+                disabled={!checkin}
                 value={checkout}
                 onChange={(e) => setCheckout(e.target.value)}
               />
@@ -88,7 +96,10 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
                 htmlFor="guests-select"
               >
-                <Users size={12} className="text-brand-terracotta flex-shrink-0" />
+                <Users
+                  size={12}
+                  className="text-brand-terracotta flex-shrink-0"
+                />
                 <span className="hidden sm:inline">Huéspedes</span>
                 <span className="sm:hidden">Personas</span>
               </label>
@@ -172,6 +183,8 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
             className="border-0 p-0 text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
             id="check-out-date"
             type="date"
+            min={checkin}
+            disabled={!checkin}
             value={checkout}
             onChange={(e) => setCheckout(e.target.value)}
           />
