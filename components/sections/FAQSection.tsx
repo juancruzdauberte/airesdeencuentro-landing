@@ -5,25 +5,37 @@ import { useState } from 'react';
 
 const faqItems = [
   {
-    question: '¿Cuál es la política de check-in y check-out?',
-    answer:
-      'El horario habitual de check-in es a partir de las 15:00 hs y el check-out es hasta las 11:00 hs. Contamos con sistema de cerradura digital para un ingreso autónomo y flexible si llegas más tarde.',
+    "question": "¿Cuál es la capacidad máxima de la propiedad?",
+    "answer": "El Encuentro puede alojar hasta 9 personas y cuenta con 3 dormitorios. Incluimos ropa de cama, pero no toallas."
   },
   {
-    question: '¿Se aceptan mascotas (pet friendly)?',
-    answer:
-      'Sí, aceptamos hasta dos mascotas educadas de tamaño pequeño o mediano. Solicitamos notificarnos con antelación para preparar el espacio con camitas y recipientes adecuados.',
+    "question": "¿Cómo puedo reservar en El Encuentro?",
+    "answer": "Para reservar, debes contactarte con nosotros. La reserva se confirma abonando una seña del 30% de la estadía."
   },
   {
-    question: '¿Qué incluye la estadía respecto a blancos y limpieza?',
-    answer:
-      'Incluimos sábanas de percal de algodón 100%, toallas y toallones de baño, toallas para la piscina, amenidades orgánicas de cortesía y limpieza final garantizada.',
+    "question": "¿Se puede abonar en pesos o en dólares?",
+    "answer": "Puedes abonar en dólares o en pesos al tipo de cambio del dólar blue."
   },
   {
-    question: '¿Cómo son las condiciones de reserva y cancelación?',
-    answer:
-      'Se abona el 50% al momento de reservar para bloquear fechas y el 50% restante al ingresar. Ofrecemos cancelación gratuita con reembolso total hasta 14 días antes de tu fecha de llegada.',
+    "question": "¿Cuál es la política de check-in y check-out?",
+    "answer": "El check-in es a partir de las 12:00 hs y el check-out es a las 10:00 hs. El late check-out tiene un costo adicional; consulta su disponibilidad antes de tu estadía."
   },
+  {
+    "question": "¿Se aceptan mascotas (pet friendly)?",
+    "answer": "Sí, aceptamos mascotas. Para conocer la cantidad permitida, consulta con nosotros antes de confirmar tu reserva."
+  },
+  {
+    "question": "¿Qué incluye el alquiler?",
+    "answer": "El alquiler incluye acceso completo a la propiedad, WiFi, uso de la piscina, parrilla, cocina totalmente equipada, ropa de cama, aire acondicionado, Smart TV con Netflix y estacionamiento. No ofrecemos toallas; recuerda traer las tuyas."
+  },
+  {
+    "question": "¿Cómo son las condiciones de reserva y cancelación?",
+    "answer": "Una vez abonada la seña del 30%, no se realiza reembolso del dinero en caso de cancelación. Puedes reprogramar la fecha; el precio puede variar según la fecha elegida."
+  },
+  {
+    "question": "¿Qué actividades hay cerca de la propiedad?",
+    "answer": "Baradero ofrece navegación por el río Baradero y el Paraná, visitas a estancias históricas, pesca deportiva, espacios verdes y restaurantes históricos."
+  }
 ];
 
 export default function FAQSection() {

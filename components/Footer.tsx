@@ -27,27 +27,27 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-stone-800">
           {/* Col 1: Brand Info */}
-          <div className="space-y-4 animate-fade-in-up">
-            <div className="flex items-center gap-3 bg-white/10 p-2.5 rounded-xl w-fit">
+          <div className="flex items-center gap-3 sm:gap-4 md:col-span-2 lg:col-span-5 lg:items-start animate-fade-in-up">
+            <div className="shrink-0">
               <Image
-                alt="El Encuentro Logo"
-                className="h-9 w-auto brightness-0 invert"
+                alt="El Encuentro Casaquinta"
+                className="h-20 w-20 sm:h-24 sm:w-24 object-contain"
                 src="/en_logo.png"
-                width={50}
-                height={50}
+                width={96}
+                height={96}
                 loading="eager"
               />
             </div>
-            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed">
+            <p className="min-w-0 max-w-sm text-sm text-stone-300 leading-relaxed lg:pt-2">
               Una casa de descanso diseñada para vivir en sintonía con la
               naturaleza, con el confort y la exclusividad que mereces.
             </p>
           </div>
 
           {/* Col 2: Navigation */}
-          <div className="animate-fade-in-up [animation-delay:0.1s]">
+          <div className="lg:col-span-2 animate-fade-in-up [animation-delay:0.1s]">
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
               Navegación
             </h4>
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Contact */}
-          <div className="animate-fade-in-up [animation-delay:0.2s]">
+          <div className="min-w-0 lg:col-span-3 animate-fade-in-up [animation-delay:0.2s]">
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
               Contacto Directo
             </h4>
@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Social & Badges */}
-          <div className="animate-fade-in-up [animation-delay:0.3s]">
+          <div className="lg:col-span-2 animate-fade-in-up [animation-delay:0.3s]">
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-4">
               Síguenos
             </h4>
@@ -120,15 +120,6 @@ export default function Footer() {
                 );
               })}
             </div>
-            <div className="p-3 bg-stone-900 rounded-xl border border-stone-800 text-xs text-stone-400">
-              <p className="font-medium text-white mb-1">
-                Superhost Certificado
-              </p>
-              <p>
-                Reconocimiento a hospitalidad constante y valoraciones
-                sobresalientes.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -138,17 +129,6 @@ export default function Footer() {
             ©{new Date().getFullYear()} El Encuentro Casa de Descanso. Todos los
             derechos reservados.
           </p>
-          <div className="flex space-x-6">
-            <Link href="#" className="hover:text-stone-300 transition">
-              Términos & Condiciones
-            </Link>
-            <Link href="#" className="hover:text-stone-300 transition">
-              Política de Privacidad
-            </Link>
-            <Link href="#" className="hover:text-stone-300 transition">
-              Reglamento de Convivencia
-            </Link>
-          </div>
         </div>
       </div>
 

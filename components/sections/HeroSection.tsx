@@ -66,9 +66,9 @@ export default function HeroSection() {
           }`}
         >
           <img
-            alt="Stunning modern architectural holiday home exterior at golden hour with swimming pool"
+            alt="Casa El Encuentro con piscina, jardín y galería cubierta"
             className="w-full h-full object-cover animate-scale-up"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3MOj8Q720PGwgwKSOC3pLc5El0Fd0krA36qN0LSmovC-IzI1v-x39jHZ3j4hO_smo5I1_mbBaHP6sFhO_NB15YB5J7rtLr-xg3X5X6u68O9LOt3lS6ArsxrLOYH8YUGM1ipsWp8_owiLQpqu6paMHA5eOqBWU12bx_D1kQVNGSFs-BKUob2JNHI3mg1JY_uU7NM1RrFIcuWAk0QqMqt-E22BK4F-T_7OfDVvRpz3UGB2IdvKomXX7"
+            src="/images/gallery/house-12.webp"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none"></div>
         </div>

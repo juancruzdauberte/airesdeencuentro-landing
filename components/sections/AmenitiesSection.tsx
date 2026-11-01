@@ -3,7 +3,7 @@
 import {
   Waves,
   Flame,
-  ShieldCheck,
+  Car,
   Laptop,
   Thermometer,
   Utensils,
@@ -14,23 +14,23 @@ const amenities = [
     icon: Waves,
     title: 'Piscina & Jardín Privado',
     description:
-      'Piscina infinita con borde atérmico, solárium con reposeras ergonómicas y un parque de olivos autóctonos.',
+      'Piscina al aire libre rodeada de césped y un jardín arbolado, con espacio para disfrutar del sol y descansar a la sombra.',
     colorBg: 'bg-brand-terracotta-light',
     colorIcon: 'text-brand-terracotta',
   },
   {
     icon: Flame,
-    title: 'Parrilla / Quincho Completo',
+    title: 'Parrilla & Galería',
     description:
-      'Asador techado tradicional con fogonero exterior, mesa rústica para 10 comensales y set de asador premium.',
+      'Parrilla de material al aire libre, junto a una galería cubierta con mesa y bancos. Un espacio para compartir un asado con vista al parque y la piscina.',
     colorBg: 'bg-brand-olive-light',
     colorIcon: 'text-brand-olive',
   },
   {
-    icon: ShieldCheck,
-    title: 'Estacionamiento Cubierto',
+    icon: Car,
+    title: 'Estacionamiento en el Parque',
     description:
-      'Cochera para dos vehículos con portón automático de acceso y seguridad perimetral monitoreada 24/7.',
+      'Espacio para estacionar dentro del parque, con ingreso por tranquera. El estacionamiento es al aire libre y actualmente no cuenta con techo.',
     colorBg: 'bg-brand-terracotta-light',
     colorIcon: 'text-brand-terracotta',
   },

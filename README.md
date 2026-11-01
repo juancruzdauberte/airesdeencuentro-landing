@@ -6,6 +6,7 @@ Una landing page moderna y responsiva para Casa El Encuentro, una residencia bou
 
 - ✅ **Responsiva**: Mobile-first, optimizada para todos los dispositivos
 - ✅ **Interactiva**: FAQ accordion, smooth scroll navigation, micro-interacciones
+- ✅ **Galería de la casa**: 33 fotografías locales, carga progresiva, vista ampliada con flechas y gestos táctiles. Usa ← / → para recorrerlas y Escape para cerrar. Respeta la preferencia de movimiento reducido. Las imágenes se guardan en `public/images/gallery/` y se enumeran en `components/sections/gallery-images.json`.
 - ✅ **Accesible**: WCAG 2.2 compliant, soporte teclado, ARIA labels
 - ✅ **Performance**: Optimizada para Lighthouse, animaciones suaves
 - ✅ **Design System**: Paleta burgundy, tipografía Plus Jakarta Sans, espacios precisos
@@ -46,7 +47,7 @@ elencuentro_lp/
 │   └── sections/               # Componentes de secciones
 │       ├── HeroSection.tsx      # Hero con glows y badges flotantes
 │       ├── QuickFactsSection.tsx # Grid 6 columnas con hechos rápidos
-│       ├── GallerySection.tsx    # Galería 4 espacios con hover
+│       ├── GallerySection.tsx    # Galería de fotografías reales con vista ampliada
 │       ├── AmenitiesSection.tsx  # 8 comodidades con iconos
 │       ├── PoliciesSection.tsx   # 4 políticas transparentes
 │       ├── TestimonialsSection.tsx # 3 testimonios con ratings
