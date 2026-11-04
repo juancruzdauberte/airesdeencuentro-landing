@@ -32,7 +32,7 @@ export default function LocationSection() {
           <div className="lg:col-span-7 animate-fade-in-up [animation-delay:0.3s]">
             <div className="relative rounded-3xl p-8 bg-brand-sand border border-stone-200/80 shadow-soft overflow-hidden">
               <iframe
-                title="Ubicación de El Encuentro: Che Guevara 711, Baradero, Buenos Aires, CP 2942"
+                title="Ubicación de Aires de Encuentro: Che Guevara 711, Baradero, Buenos Aires, CP 2942"
                 src="https://www.google.com/maps?q=Che%20Guevara%20711%2C%20Baradero%2C%20Buenos%20Aires%2C%20CP%202942%2C%20Argentina&output=embed"
                 className="w-full h-80 sm:h-96 rounded-2xl border-0"
                 loading="lazy"

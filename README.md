@@ -1,6 +1,24 @@
-# Casa El Encuentro - Landing Page
+# Aires de Encuentro - Landing Page
 
-Una landing page moderna y responsiva para Casa El Encuentro, una residencia boutique exclusiva de alquiler temporario. Recreada desde diseño Stitch a Next.js con fidelidad 100% al design system original.
+Una landing page moderna y responsiva para Aires de Encuentro, una residencia boutique exclusiva de alquiler temporario. Recreada desde diseño Stitch a Next.js con fidelidad 100% al design system original.
+
+## SEO
+
+El dominio canónico es `https://airesdeencuentrobaradero.net`. Los metadatos en
+`lib/seo.ts` incluyen título y descripción locales, canonical, Open Graph,
+Twitter Card y datos estructurados `LodgingBusiness` con la dirección publicada.
+No se incluyen precios, reseñas ni calificaciones no verificadas.
+
+Next.js genera `/robots.txt` desde `app/robots.ts` y `/sitemap.xml` desde
+`app/sitemap.ts`. El sitemap solo incluye la página principal, sin fechas de
+modificación artificiales. La imagen social usa una fotografía local de la casa.
+
+Verificación local: `node --test tests/seo.test.cjs`, `npx tsc --noEmit` y
+`npm run build`. Después de publicar, comprueba que el dominio sirve HTTPS,
+redirige las variantes al dominio canónico y registra la propiedad en Google
+Search Console para enviar `https://airesdeencuentrobaradero.net/sitemap.xml`.
+Valida la URL pública con Schema.org Validator y revisa la vista previa social.
+Estos pasos externos no se realizan automáticamente ni garantizan posicionamiento.
 
 ## Consultas de disponibilidad
 
@@ -296,4 +314,4 @@ npm run lint
 
 ## 📄 Licencia
 
-© 2026 Casa El Encuentro. Todos los derechos reservados.
+© 2026 Aires de Encuentro. Todos los derechos reservados.

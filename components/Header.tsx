@@ -39,15 +39,15 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="#"
-            aria-label="El Encuentro - Ir al inicio"
+            aria-label="Aires de Encuentro - Ir al inicio"
             className="flex items-center gap-3 group"
           >
             <Image
               width={50}
               height={50}
-              alt="El Encuentro Logo"
+              alt="Aires de Encuentro Logo"
               className="w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              src="/en_logo.png"
+              src="/ade_logo.png"
             />
           </Link>
 

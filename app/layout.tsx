@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import { siteMetadata } from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -9,22 +10,7 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
-export const metadata: Metadata = {
-  title: "El Encuentro - Casa de Descanso | Alquiler Vacacional Exclusivo",
-  description:
-    "Descubre El Encuentro: una experiencia de alquiler temporal diseñada para el confort, la naturaleza y momentos inolvidables.",
-  robots: "index, follow",
-  icons: {
-    icon: "/favicon.ico",
-  },
-  openGraph: {
-    title: "El Encuentro - Casa de Descanso",
-    description:
-      "Tu refugio ideal para desconectar y volver a conectar con la naturaleza.",
-    type: "website",
-    locale: "es_ES",
-  },
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,

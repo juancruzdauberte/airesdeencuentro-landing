@@ -14,7 +14,7 @@ const footerLinks = [
 const socialLinks = [
   {
     icon: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
-    label: "Instagram de El Encuentro",
+    label: "Instagram de Aires de Encuentro",
     href: "#",
   },
 ];
@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="flex items-center gap-3 sm:gap-4 md:col-span-2 lg:col-span-5 lg:items-start animate-fade-in-up">
             <div className="shrink-0">
               <Image
-                alt="El Encuentro Casaquinta"
+                alt="Aires de Encuentro Casaquinta"
                 className="h-20 w-20 sm:h-24 sm:w-24 object-contain"
-                src="/en_logo.png"
+                src="/ade_logo.png"
                 width={96}
                 height={96}
                 loading="eager"
@@ -73,7 +73,7 @@ export default function Footer() {
             <ul className="space-y-3 text-xs sm:text-sm text-stone-400">
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-brand-terracotta" />
-                <span>reservas@elencuentro.com</span>
+                <span>airesdeencuentrobaradero@gmail.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-brand-terracotta" />
@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4 animate-fade-in-up [animation-delay:0.4s]">
           <p>
-            ©{new Date().getFullYear()} El Encuentro Casa de Descanso. Todos los
+            ©{new Date().getFullYear()} Aires de Encuentro Casa de Descanso. Todos los
             derechos reservados.
           </p>
         </div>

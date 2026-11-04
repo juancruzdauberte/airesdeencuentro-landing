@@ -36,7 +36,7 @@ export default function HeroSection() {
             y volver a conectar.
           </h1>
           <p className="mt-5 text-lg sm:text-xl text-brand-muted leading-relaxed font-light animate-fade-in [animation-delay:0.2s]">
-            Descubre El Encuentro: una experiencia de alquiler temporal diseñada
+            Descubre Aires de Encuentro: una experiencia de alquiler temporal diseñada
             para el confort, la naturaleza y momentos inolvidables.
           </p>
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
           }`}
         >
           <img
-            alt="Casa El Encuentro con piscina, jardín y galería cubierta"
+            alt="Aires de Encuentro con piscina, jardín y galería cubierta"
             className="w-full h-full object-cover animate-scale-up"
             src="/images/gallery/house-12.webp"
           />

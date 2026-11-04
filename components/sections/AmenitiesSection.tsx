@@ -77,7 +77,7 @@ export default function AmenitiesSection() {
             Comodidades diseñadas para tu bienestar
           </h2>
           <p className="text-brand-muted text-base">
-            Cada detalle en El Encuentro ha sido seleccionado para ofrecer una
+            Cada detalle en Aires de Encuentro ha sido seleccionado para ofrecer una
             estancia tranquila, cómoda y totalmente equipada.
           </p>
         </div>

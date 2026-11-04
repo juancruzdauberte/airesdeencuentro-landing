@@ -6,10 +6,10 @@ import { useState } from 'react';
 const faqItems = [
   {
     "question": "¿Cuál es la capacidad máxima de la propiedad?",
-    "answer": "El Encuentro puede alojar hasta 9 personas y cuenta con 3 dormitorios. Incluimos ropa de cama, pero no toallas."
+    "answer": "Aires de Encuentro puede alojar hasta 9 personas y cuenta con 3 dormitorios. Incluimos ropa de cama, pero no toallas."
   },
   {
-    "question": "¿Cómo puedo reservar en El Encuentro?",
+    "question": "¿Cómo puedo reservar en Aires de Encuentro?",
     "answer": "Para reservar, debes contactarte con nosotros. La reserva se confirma abonando una seña del 30% de la estadía."
   },
   {

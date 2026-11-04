@@ -92,7 +92,7 @@ Actualmente no se requieren. Si necesitas integración:
 
 ```env
 NEXT_PUBLIC_API_URL=
-NEXT_PUBLIC_CONTACT_EMAIL=reservas@elencuentro.com
+NEXT_PUBLIC_CONTACT_EMAIL=airesdeencuentrobaradero@gmail.com
 NEXT_PUBLIC_PHONE=+54 (9) 351 892-4112
 ```
 

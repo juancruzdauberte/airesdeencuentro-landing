@@ -7,10 +7,17 @@ import LocationSection from "@/components/sections/LocationSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTABanner from "@/components/sections/CTABanner";
 import Footer from "@/components/Footer";
+import { lodgingSchema } from "@/lib/seo";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-brand-cream text-brand-charcoal">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(lodgingSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <Header />
       <HeroSection />
       <BookingBar />

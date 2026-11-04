@@ -46,7 +46,7 @@ export default function GallerySection() {
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-charcoal mt-1">Conoce cada rincón</h2>
           </div>
           <p className="text-brand-muted text-sm sm:text-base max-w-md">
-            Un recorrido por El Encuentro, en imágenes. Abre una fotografía y descubre los espacios de tu próxima escapada.
+            Un recorrido por Aires de Encuentro, en imágenes. Abre una fotografía y descubre los espacios de tu próxima escapada.
           </p>
         </div>
 
@@ -56,12 +56,12 @@ export default function GallerySection() {
               type="button"
               key={src}
               onClick={(event) => openPhoto(index, event.currentTarget)}
-              aria-label={`Ampliar fotografía ${index + 1} de El Encuentro`}
+              aria-label={`Ampliar fotografía ${index + 1} de Aires de Encuentro`}
               aria-haspopup="dialog"
               className={`gallery-card group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-sand shadow-soft focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-terracotta ${index === 0 ? 'col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto' : 'aspect-[4/3]'}`}
               style={{ animationDelay: `${(index % 6) * 60}ms` }}
             >
-              <Image src={src} alt={`La casa El Encuentro, fotografía ${index + 1}`} fill sizes={index === 0 ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 50vw, 33vw'} className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-105" />
+              <Image src={src} alt={`La casa Aires de Encuentro, fotografía ${index + 1}`} fill sizes={index === 0 ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 50vw, 33vw'} className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-105" />
               <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <span className="absolute bottom-4 left-4 text-white text-sm">{String(index + 1).padStart(2, '0')} <span className="sr-only">de {galleryImages.length}</span></span>
               <span aria-hidden="true" className="absolute bottom-3 right-3 rounded-full bg-black/50 text-white w-10 h-10 flex items-center justify-center text-2xl">＋</span>
@@ -88,7 +88,7 @@ export default function GallerySection() {
         }}
       >
         <div className="flex items-center justify-between gap-3 mb-3">
-          <h3 id="gallery-dialog-title" className="font-serif text-lg">El Encuentro · La casa</h3>
+          <h3 id="gallery-dialog-title" className="font-serif text-lg">Aires de Encuentro · La casa</h3>
           <button type="button" onClick={() => dialog.current?.close()} aria-label="Cerrar galería" className="gallery-control text-2xl">×</button>
         </div>
         <div
@@ -102,7 +102,7 @@ export default function GallerySection() {
           }}
           onTouchCancel={() => { touchStart.current = null; }}
         >
-          <Image key={active} src={galleryImages[active]} alt={`La casa El Encuentro, fotografía ${active + 1} de ${galleryImages.length}`} fill sizes="96vw" className="gallery-photo object-contain" />
+          <Image key={active} src={galleryImages[active]} alt={`La casa Aires de Encuentro, fotografía ${active + 1} de ${galleryImages.length}`} fill sizes="96vw" className="gallery-photo object-contain" />
         </div>
         <div className="flex items-center justify-between mt-3 gap-3">
           <button type="button" onClick={() => navigate(-1)} aria-label="Fotografía anterior" className="gallery-control">←</button>
