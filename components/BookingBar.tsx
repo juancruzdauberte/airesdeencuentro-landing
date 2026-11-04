@@ -1,7 +1,7 @@
 "use client";
 
 import { Calendar, Users, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useId, useState, type FormEvent } from "react";
 
 interface BookingBarProps {
   compact?: boolean;
@@ -17,7 +17,15 @@ const formatDate = (dateString: string): string => {
 export default function BookingBar({ compact = false }: BookingBarProps) {
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
-  const [guests, setGuests] = useState("6");
+  const [guests, setGuests] = useState("");
+
+  const id = useId();
+  const message = "Completá la fecha de check-in, la fecha de check-out y la cantidad de huéspedes para consultar disponibilidad.";
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!checkin || !checkout || !guests || checkout <= checkin) return;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
 
   // Formatea las fechas para WhatsApp
   const formattedCheckin = formatDate(checkin);
@@ -33,7 +41,8 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
   if (compact) {
     // Modo compacto para el modal flotante
     return (
-      <div className="w-full">
+      <form onSubmit={submit} aria-describedby={`${id}-help`} className="w-full">
+        <p id={`${id}-help`} className="text-xs text-brand-charcoal mb-3">{message}</p>
         <div
           className="bg-white rounded-lg border border-stone-200 p-3 space-y-3"
           style={{
@@ -46,7 +55,7 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
             <div className="flex flex-col text-left group">
               <label
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
-                htmlFor="check-in-date"
+                htmlFor={`${id}-check-in-date`}
               >
                 <Calendar
                   size={12}
@@ -58,10 +67,11 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
               <input
                 aria-label="Fecha de llegada"
                 className="border-0 p-0 text-xs sm:text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-                id="check-in-date"
+                id={`${id}-check-in-date`}
                 type="date"
+                required
                 value={checkin}
-                onChange={(e) => setCheckin(e.target.value)}
+                onChange={(e) => { setCheckin(e.target.value); setCheckout(""); }}
               />
             </div>
 
@@ -69,7 +79,7 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
             <div className="flex flex-col text-left group">
               <label
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
-                htmlFor="check-out-date"
+                htmlFor={`${id}-check-out-date`}
               >
                 <Calendar
                   size={12}
@@ -81,12 +91,16 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
               <input
                 aria-label="Fecha de salida"
                 className="border-0 p-0 text-xs sm:text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-                id="check-out-date"
+                id={`${id}-check-out-date`}
                 type="date"
+                required
                 min={checkin}
                 disabled={!checkin}
                 value={checkout}
-                onChange={(e) => setCheckout(e.target.value)}
+                onChange={(e) => {
+                  setCheckout(e.target.value);
+                  e.target.setCustomValidity(e.target.value && e.target.value <= checkin ? "La fecha de check-out debe ser posterior al check-in." : "");
+                }}
               />
             </div>
 
@@ -94,7 +108,7 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
             <div className="flex flex-col text-left group">
               <label
                 className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1 transition-colors group-focus-within:text-brand-terracotta line-clamp-1"
-                htmlFor="guests-select"
+                htmlFor={`${id}-guests-select`}
               >
                 <Users
                   size={12}
@@ -105,44 +119,47 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
               </label>
               <select
                 className="border-0 p-0 text-xs sm:text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-                id="guests-select"
+                id={`${id}-guests-select`}
+                required
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
               >
+                <option value="">Seleccioná huéspedes</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
-                <option value="+6">+6</option>
+                <option value="7">7</option><option value="8">8</option><option value="9">9</option>
               </select>
             </div>
 
             {/* Submit Button */}
             <div>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                type="submit"
                 className="w-full py-2 px-2 bg-brand-terracotta hover:bg-brand-terracotta-dark text-white font-semibold text-xs sm:text-sm rounded-lg transition duration-200 flex items-center justify-center gap-1 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 active:scale-95 h-10 whitespace-nowrap"
               >
                 <MessageCircle size={14} className="hidden sm:block" />
                 <span>Consultar</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 
   // Modo normal (desktop)
   return (
-    <div
+    <form
+      onSubmit={submit}
+      aria-describedby={`${id}-help`}
       className="relative max-w-4xl mx-auto -mt-10 sm:-mt-14 z-20 px-4"
       data-purpose="booking-bar"
       id="disponibilidad"
     >
+      <p id={`${id}-help`} className="bg-white rounded-lg p-3 text-sm text-brand-charcoal mb-2">{message}</p>
       <div
         className="bg-white/95 backdrop-blur-md rounded-2xl shadow-floating p-4 sm:p-5 border border-stone-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end animate-fade-in-up"
         style={{
@@ -154,7 +171,7 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
         <div className="flex flex-col text-left px-2 group">
           <label
             className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1.5 transition-colors group-focus-within:text-brand-terracotta"
-            htmlFor="check-in-date"
+            htmlFor={`${id}-check-in-date`}
           >
             <Calendar size={14} className="text-brand-terracotta" />
             Check-in
@@ -162,10 +179,11 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
           <input
             aria-label="Fecha de llegada"
             className="border-0 p-0 text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-            id="check-in-date"
+            id={`${id}-check-in-date`}
             type="date"
+                required
             value={checkin}
-            onChange={(e) => setCheckin(e.target.value)}
+            onChange={(e) => { setCheckin(e.target.value); setCheckout(""); }}
           />
         </div>
 
@@ -173,7 +191,7 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
         <div className="flex flex-col text-left px-2 sm:border-l sm:border-stone-200 group">
           <label
             className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1.5 transition-colors group-focus-within:text-brand-terracotta"
-            htmlFor="check-out-date"
+            htmlFor={`${id}-check-out-date`}
           >
             <Calendar size={14} className="text-brand-terracotta" />
             Check-out
@@ -181,12 +199,16 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
           <input
             aria-label="Fecha de salida"
             className="border-0 p-0 text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-            id="check-out-date"
+            id={`${id}-check-out-date`}
             type="date"
+                required
             min={checkin}
             disabled={!checkin}
             value={checkout}
-            onChange={(e) => setCheckout(e.target.value)}
+            onChange={(e) => {
+                  setCheckout(e.target.value);
+                  e.target.setCustomValidity(e.target.value && e.target.value <= checkin ? "La fecha de check-out debe ser posterior al check-in." : "");
+                }}
           />
         </div>
 
@@ -194,39 +216,39 @@ export default function BookingBar({ compact = false }: BookingBarProps) {
         <div className="flex flex-col text-left px-2 lg:border-l lg:border-stone-200 group">
           <label
             className="text-xs font-bold text-brand-olive uppercase tracking-wider mb-1 flex items-center gap-1.5 transition-colors group-focus-within:text-brand-terracotta"
-            htmlFor="guests-select"
+            htmlFor={`${id}-guests-select`}
           >
             <Users size={14} className="text-brand-terracotta" />
             Huéspedes
           </label>
           <select
             className="border-0 p-0 text-sm font-medium text-brand-charcoal focus:ring-0 cursor-pointer bg-transparent outline-none"
-            id="guests-select"
-            value={guests}
+            id={`${id}-guests-select`}
+            required
+                value={guests}
             onChange={(e) => setGuests(e.target.value)}
           >
-            <option value="2">2 personas</option>
+            <option value="">Seleccioná huéspedes</option>
+                <option value="2">2 personas</option>
             <option value="3">3 personas</option>
             <option value="4">4 personas</option>
             <option value="5">5 personas</option>
             <option value="6">6 personas</option>
-            <option value="+6">+6 personas</option>
+            <option value="7">7 personas</option><option value="8">8 personas</option><option value="9">9 personas</option>
           </select>
         </div>
 
         {/* Submit Button */}
         <div>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="submit"
             className="w-full py-3.5 px-4 bg-brand-terracotta hover:bg-brand-terracotta-dark text-white font-semibold text-sm rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 active:scale-95"
           >
             <MessageCircle size={18} />
             <span>Consultar</span>
-          </a>
+          </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }

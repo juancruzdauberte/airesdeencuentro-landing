@@ -20,24 +20,22 @@ export default function ContactSection() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
               <a
-                href="https://wa.me/?text=Hola!%20Quisiera%20consultar%20disponibilidad%20para%20Casa%20El%20Encuentro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-surface-container-lowest text-primary hover:bg-primary-fixed font-label-lg text-label-lg font-bold shadow-md transition-all active:scale-95"
+                href="#disponibilidad"
+                  className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-surface-container-lowest text-primary hover:bg-primary-fixed font-label-lg text-label-lg font-bold shadow-md transition-all active:scale-95"
               >
                 <span className="material-symbols-outlined text-[20px]">
                   chat
                 </span>
-                <span>Escribir por WhatsApp</span>
+                <span>Consultar disponibilidad</span>
               </a>
               <a
-                href="mailto:hola@casaelencuentro.com?subject=Consulta%20de%20estad%C3%ADa"
-                className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-on-primary hover:bg-primary border border-outline-variant/30 font-label-lg text-label-lg transition-all"
+                href="#disponibilidad"
+                  className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-on-primary hover:bg-primary border border-outline-variant/30 font-label-lg text-label-lg transition-all"
               >
                 <span className="material-symbols-outlined text-[20px]">
                   mail
                 </span>
-                <span>Enviar consulta por Email</span>
+                <span>Completar fechas y huéspedes</span>
               </a>
             </div>
           </div>

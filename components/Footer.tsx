@@ -78,9 +78,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-brand-terracotta" />
                 <a
-                  href="https://wa.me/5493329305210?text=Hola!%20Quisiera%20consultar%20sobre%20la%20disponibilidad%20y%20tarifas%20de%20El%20Encuentro."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#disponibilidad"
                   className="hover:text-brand-terracotta transition-colors"
                 >
                   +54 (9) 332 930-5210

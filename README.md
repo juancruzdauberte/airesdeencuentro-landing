@@ -2,6 +2,16 @@
 
 Una landing page moderna y responsiva para Casa El Encuentro, una residencia boutique exclusiva de alquiler temporario. Recreada desde diseño Stitch a Next.js con fidelidad 100% al design system original.
 
+## Consultas de disponibilidad
+
+Todos los accesos de consulta llevan al formulario principal o al formulario
+flotante. Antes de abrir WhatsApp es obligatorio completar check-in, check-out
+y cantidad de huéspedes; la salida debe ser posterior a la llegada. No hay una
+cantidad de huéspedes preseleccionada. Ambos formularios muestran instrucciones
+y el navegador señala los campos obligatorios faltantes.
+
+Verificación: `node --test tests/booking.test.cjs`.
+
 ## 🚀 Características
 
 - ✅ **Responsiva**: Mobile-first, optimizada para todos los dispositivos
