@@ -39,6 +39,18 @@ test('local SEO uses the official canonical and matching social metadata', () =>
   assert.match(fs.readFileSync('app/page.tsx', 'utf8'), /application\/ld\+json/);
 });
 
+test('SEO includes requested booking and outdoor search phrases', () => {
+  const { siteMetadata: metadata, lodgingSchema } = load('lib/seo.ts');
+  for (const phrase of ['reservas', 'reservas en baradero', 'casas en baradero', 'casa al aire libre']) {
+    assert.ok(metadata.keywords?.includes(phrase), `Missing keyword: ${phrase}`);
+  }
+  assert.match(metadata.description, /reservas en Baradero/i);
+  assert.match(metadata.description, /aire libre/i);
+  assert.equal(metadata.openGraph.description, metadata.description);
+  assert.equal(metadata.twitter.description, metadata.description);
+  assert.equal(lodgingSchema.description, metadata.description);
+});
+
 test('robots allows crawling and points at the canonical sitemap', () => {
   assert.deepEqual(load('app/robots.ts').default(), {
     rules: { userAgent: '*', allow: '/' },

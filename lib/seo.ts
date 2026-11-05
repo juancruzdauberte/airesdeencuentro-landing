@@ -3,13 +3,22 @@ import type { Metadata } from 'next';
 const siteUrl = 'https://airesdeencuentrobaradero.net';
 const title = 'Casa de descanso en Baradero | Aires de Encuentro';
 const description =
-  'Disfruta de Aires de Encuentro, casa de alquiler temporal en Baradero, Buenos Aires, con piscina, jardín y galería cubierta. Consulta disponibilidad para tu estadía.';
+  'Consultá disponibilidad y reservas en Baradero: Aires de Encuentro, casa de alquiler temporal con piscina, jardín y galería para disfrutar al aire libre.';
 const image = '/images/gallery/house-12.webp';
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  keywords: [
+    'reservas',
+    'reservas en baradero',
+    'casas en baradero',
+    'casa al aire libre',
+    'alquiler temporal en Baradero',
+    'casa con piscina en Baradero',
+    'Aires de Encuentro',
+  ],
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
   icons: { icon: '/favicon.ico' },
