@@ -1,62 +1,55 @@
-'use client';
+"use client";
 
-import {
-  Waves,
-  Flame,
-  Car,
-  Laptop,
-  Thermometer,
-  Utensils,
-} from 'lucide-react';
+import { Waves, Flame, Car, Laptop, Thermometer, Utensils } from "lucide-react";
 
 const amenities = [
   {
     icon: Waves,
-    title: 'Piscina & Jardín Privado',
+    title: "Piscina & Jardín Privado",
     description:
-      'Piscina al aire libre rodeada de césped y un jardín arbolado, con espacio para disfrutar del sol y descansar a la sombra.',
-    colorBg: 'bg-brand-terracotta-light',
-    colorIcon: 'text-brand-terracotta',
+      "Piscina al aire libre rodeada de césped y un jardín arbolado, con espacio para disfrutar del sol y descansar a la sombra.",
+    colorBg: "bg-brand-terracotta-light",
+    colorIcon: "text-brand-terracotta",
   },
   {
     icon: Flame,
-    title: 'Parrilla & Galería',
+    title: "Parrilla & Galería",
     description:
-      'Parrilla de material al aire libre, junto a una galería cubierta con mesa y bancos. Un espacio para compartir un asado con vista al parque y la piscina.',
-    colorBg: 'bg-brand-olive-light',
-    colorIcon: 'text-brand-olive',
+      "Parrilla de material al aire libre, junto a una galería cubierta con mesa y bancos. Un espacio para compartir un asado con vista al parque y la piscina.",
+    colorBg: "bg-brand-olive-light",
+    colorIcon: "text-brand-olive",
   },
   {
     icon: Car,
-    title: 'Estacionamiento en el Parque',
+    title: "Estacionamiento en el Parque",
     description:
-      'Espacio para estacionar dentro del parque, con ingreso por tranquera. El estacionamiento es al aire libre y actualmente no cuenta con techo.',
-    colorBg: 'bg-brand-terracotta-light',
-    colorIcon: 'text-brand-terracotta',
+      "Espacio para estacionar dentro del parque, con ingreso por tranquera. El estacionamiento es al aire libre y actualmente no cuenta con techo.",
+    colorBg: "bg-brand-terracotta-light",
+    colorIcon: "text-brand-terracotta",
   },
   {
     icon: Laptop,
-    title: 'Wifi & Espacio Home Office',
+    title: "Wifi & Espacio Home Office",
     description:
-      'Conexión de fibra simétrica de 300 Mbps con repetidores mesh en toda la propiedad y escritorio de trabajo.',
-    colorBg: 'bg-brand-olive-light',
-    colorIcon: 'text-brand-olive',
+      "Conexión de fibra simétrica de 300 Mbps con repetidores mesh en toda la propiedad y escritorio de trabajo.",
+    colorBg: "bg-brand-olive-light",
+    colorIcon: "text-brand-olive",
   },
   {
     icon: Thermometer,
-    title: 'Climatización Integral',
+    title: "Climatización Integral",
     description:
-      'Aire acondicionado frío/calor inverter en cada ambiente y hogar a leña tradicional en la sala de estar principal.',
-    colorBg: 'bg-brand-terracotta-light',
-    colorIcon: 'text-brand-terracotta',
+      "Aire acondicionado frío/calor en living/comedor y habitación matrimonial.",
+    colorBg: "bg-brand-terracotta-light",
+    colorIcon: "text-brand-terracotta",
   },
   {
     icon: Utensils,
-    title: 'Cocina Gourmet Equipada',
+    title: "Cocina Gourmet Equipada",
     description:
-      'Cafetera espresso, cava de vinos, lavavajillas, vajilla completa de cerámica de autor y especias locales básicas.',
-    colorBg: 'bg-brand-olive-light',
-    colorIcon: 'text-brand-olive',
+      "Cafetera italiana, cava de vinos, lavavajillas, vajilla completa de cerámica de autor y especias locales básicas.",
+    colorBg: "bg-brand-olive-light",
+    colorIcon: "text-brand-olive",
   },
 ];
 
@@ -77,8 +70,8 @@ export default function AmenitiesSection() {
             Comodidades diseñadas para tu bienestar
           </h2>
           <p className="text-brand-muted text-base">
-            Cada detalle en Aires de Encuentro ha sido seleccionado para ofrecer una
-            estancia tranquila, cómoda y totalmente equipada.
+            Cada detalle en Aires de Encuentro ha sido seleccionado para ofrecer
+            una estancia tranquila, cómoda y totalmente equipada.
           </p>
         </div>
 
