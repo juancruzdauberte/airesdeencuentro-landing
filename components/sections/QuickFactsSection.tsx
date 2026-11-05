@@ -26,8 +26,8 @@ const facts = [
   },
   {
     icon: "key",
-    title: "Check-in autónomo",
-    description: "Cerradura digital",
+    title: "Check-in presencial",
+    description: "Contacto en persona",
   },
 ];
 
